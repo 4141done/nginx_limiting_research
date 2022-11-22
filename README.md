@@ -1,6 +1,17 @@
 # Limiter
 A test repo to show various types of rate limiting.
 
+## Run it
+Add nginx plus certs to the root directory and do `docker-compose up`
+
+Run any curl with the `Account-Id` and `User-Id` headers
+`curl -i -H "Account-Id: 123" -H "User-Id: 666" localhost:4000/hello`
+
+## Philosophy
+* It should be easy to understand what the limits are
+* It should be easy to set limits without making sure a lot of different things match
+* The client should receive feedback on their rate limit status
+
 ## Background and Terminology
 There are many different kinds of rate limiting algorithms.  They are enumerated below.  However, there are some elements that are common to all strategies that should be considered first.
 
